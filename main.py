@@ -1,6 +1,11 @@
 import time
 import math
 
+RED = "\033[31m"
+GREEN = "\033[32m"
+BLUE = "\033[34m"
+RESET = "\033[0m"
+
 class Screen:
     def __init__(self, width, height):
         self.width = width
@@ -60,7 +65,7 @@ class Screen:
         # print("\033[H\033[J", end="")
         
         for row in self.pixels:
-            print("".join(row))
+            print(RED + "".join(row) + RESET)
             
 class Render3D:
     def __init__(self, screen):
